@@ -56,7 +56,9 @@ Permet de choisir le nombre de joueur de la partie
 
 Lancer ()
 
-Permet le lancement des 5 (ou moins) dés
+Permet le lancement des 5 dés
+
+Relance()
 
 Switch et plusieurs fonctions lancer en fonctions du nombre de dés a jeter???? 
 
@@ -64,9 +66,9 @@ MainJ  ()
 
 Permet de compter le nombre de face que le joueur possède (ex : 3 Deux, 2 un, etc...)
 
-Choix ()
+Combinaison()
 
-Permet de choisir les dés garder
+Repertorie les combinaison possible avec les dés de la main.
 
 Tour ()
 
