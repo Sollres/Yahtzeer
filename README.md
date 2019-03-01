@@ -50,33 +50,37 @@ Objectif Projet :
 Total final
 Fonctions :
 
-Start () 
+int Start () 
 
 Permet de choisir le nombre de joueur de la partie
 
-Lancer ()
+void Lancer (structure main)
 
 Permet le lancement des 5 dés
 
-Relance()
+void Relance(structure main)
 
 Switch et plusieurs fonctions lancer en fonctions du nombre de dés a jeter???? 
 
-MainJ  ()
+int MainJ  (structure main)
 
 Permet de compter le nombre de face que le joueur possède (ex : 3 Deux, 2 un, etc...)
 
-Combinaison()
+int Combinaison(structure combinaison)
 
 Repertorie les combinaison possible avec les dés de la main.
 
-Tour ()
+int Tour (numero du joueur, structure main)
 
 Permet de réaliser le tour d’un des joueurs. Combinaison jouée et nombre de points marqués
 
-Points ()
+int Points ()
 
-Calcul et affichage du nombre de points du joueurs
+Calcul et affichage du nombre de points du joueur
+
+void Feuille des scores ()
+
+Permet l'affichage des scores
 
 
 Structure : 
