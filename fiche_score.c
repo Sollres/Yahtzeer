@@ -59,8 +59,8 @@ void affichage_score(fiche_score * score){
 	printf("Brelan (Total des 3 dés) : %i \n",score->brelan);
 	printf("Carré (Total des 4 dés) : %i \n",score->carre);
 	printf("Full (25 points) : %i\n",score->full);
-	printf("Petite Suite (30 points) : %i\n",score->petite_s);
-	printf("Grande Suite (40 points) : %i\n",score->gde_s);
+	printf("Petite Suite (30 points/4 dés à la suite) : %i\n",score->petite_s);
+	printf("Grande Suite (40 points/5 dés à la suite) : %i\n",score->gde_s);
 	printf("Yams (50 points) : %i\n",score->yams);
 	printf("Chance (Total des 5 dés) : %i\n",score->chance);
 	printf("Total Partie Secondaire : %i\n",score->total_ii);
