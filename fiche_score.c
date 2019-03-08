@@ -16,8 +16,8 @@ typedef struct s_fiche_score
 	int brelan ; //Total des 3 dés identiques
 	int carre ; //Total des 4 dés identiques
 	int full ; //25pts
-	int petite_s ; //30pts
-	int gde_s ; //40pts
+	int petite_s ; //30pts (suite de quatre dés)
+	int gde_s ; //40pts (suite de 5 dés)
 	int yams ; //50pts
 	int chance ; //Total des 5 dés
 	int total_ii ;
