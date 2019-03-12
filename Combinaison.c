@@ -196,7 +196,7 @@ void combinaison(combinaison * combi, t_main m1, fiche_score score)
                                                         
                                 }
                                 if(score.yams == 0){            // ou encore les points du yams
-                                    combi->yams = 1;.
+                                    combi->yams = 1;
                                 }   
                         break;
                 }
@@ -228,7 +228,7 @@ void combinaison(combinaison * combi, t_main m1, fiche_score score)
                                                         
                                 }
                                 if(score.yams == 0){            // ou encore les points du yams
-                                    combi->yams = 1;.
+                                    combi->yams = 1;
                                 }   
                         break;
                 }
@@ -260,7 +260,7 @@ void combinaison(combinaison * combi, t_main m1, fiche_score score)
                                                         
                                 }
                                 if(score.yams == 0){            
-                                    combi->yams = 1;.
+                                    combi->yams = 1;
                                 }   
                         break;
                 }
@@ -292,8 +292,8 @@ void combinaison(combinaison * combi, t_main m1, fiche_score score)
                                                         
                                 }
                                 if(score.yams == 0){            
-                                    combi->yams = 1;.
-                                }   
+                                    combi->yams = 1;
+                                }  
                         break;
                 }
         }
@@ -324,18 +324,18 @@ void combinaison(combinaison * combi, t_main m1, fiche_score score)
                                                         
                                 }
                                 if(score.yams == 0){            
-                                    combi->yams = 1;.
+                                    combi->yams = 1;
                                 }   
                         break;
                 }
         }
         if(m1.nb_six > 0){
                 switch(m1.nb_six){
-                        case 1 :combi->t_un = 1 ;break;
-                        case 2 :combi->t_un = 2 ;break;
+                        case 1 :combi->t_six = 1 ;break;
+                        case 2 :combi->t_six = 2 ;break;
                         case 3 : 
-                                if(score.t_un == 0){            
-                                    combi->t_un = 3;            
+                                if(score.t_six == 0){            
+                                    combi->t_six = 3;            
                                 }
 
                                 if(score.brelan == 0){                          
@@ -343,20 +343,20 @@ void combinaison(combinaison * combi, t_main m1, fiche_score score)
                                 }                             
                                 break;
                         case 4 :
-                                if(score.t_un == 0){
-                                    combi->t_un = 4 ;
+                                if(score.t_six == 0){
+                                    combi->t_six = 4 ;
                                 }
-                                if(score.carree == 0){
+                                if(score.carre == 0){
                                     combi->carre = 24;
                                 }
                                 break;
                         case 5 :
-                                if(score.t_un == 0){
-                                    combi->t_un = 5;            
+                                if(score.t_six == 0){
+                                    combi->t_six = 5;            
                                                         
                                 }
                                 if(score.yams == 0){            
-                                    combi->yams = 1;.
+                                    combi->yams = 1;
                                 }   
                         break;
                 }
