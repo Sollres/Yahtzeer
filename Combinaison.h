@@ -69,5 +69,7 @@ void petite_suite(combinaison *, t_main);
 void gde_suite(combinaison *, t_main );
 void full(combinaison *, t_main );
 void chance(combinaison *);
+void point (fiche_score *, combinaison, t_main);
 void combinaison(combinaison * , t_main , fiche_score );
+
 
