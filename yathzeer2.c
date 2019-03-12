@@ -1,4 +1,4 @@
-include <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
@@ -136,8 +136,8 @@ void mainJ(t_main *m1)
 }
 
 
-//fonction qui verifie si on a la combinaison petite suite et qui met à jour la structure combinaison
-void pte_suite(combinaison *combi, t_main m1)
+//fonction qui vérifie si on a la combinaison petite suite dans la main et qui met à jour la structure combinaison
+void petite_suite(combinaison *combi, t_main m1)
 {		
 	if((m1.nb_un>0 && m1.nb_un<3) && (m1.nb_deux>0 && m1.nb_deux<3) && (m1.nb_trois>0 && m1.nb_trois<3) && (m1.nb_quatre>0 && m1.nb_quatre<3)){
 		combi->petite_s = 1;
@@ -157,7 +157,7 @@ void pte_suite(combinaison *combi, t_main m1)
 
 }
 
-//fonction qui verifie si on a la combinaison petite suite et qui met à jour la structure combinaison
+//fonction qui vérifie si on a la combinaison petite suite et qui met à jour la structure combinaison
 void gde_suite(combinaison *combi, t_main m1)
 {		
 	if((m1.nb_un == 1) && (m1.nb_deux == 1) && (m1.nb_trois == 1) && (m1.nb_quatre == 1) && (m1.nb_cinq == 1)){
@@ -175,7 +175,7 @@ void gde_suite(combinaison *combi, t_main m1)
 
 }
 
-// fonction qui verifie si on a la combinaison full et qui met à jour la structure combinaison
+// fonction qui vérifie si on a la combinaison full et qui met à jour la structure combinaison
 void full(combinaison *combi, t_main m1){
 
 	if((comb.brelan == 1) && (m1.nb_un == 2)){
@@ -221,6 +221,7 @@ void full(combinaison *combi, t_main m1){
 	}
 }
 
+// fonction qui donne la possibilité au joueur de faire la combinison chance.
 void chance(combinaison *combi)
 {
 
@@ -228,7 +229,7 @@ void chance(combinaison *combi)
 
 }
 
-
+// vérifie quelle combinaison peut être fait par le joueur.
 void combinaison(combinaison * combi, t_main m1, fiche_score score)
 {
         if(m1.nb_un > 0){
@@ -236,17 +237,30 @@ void combinaison(combinaison * combi, t_main m1, fiche_score score)
                         case 1 :combi->t_un = 1 ;break;
                         case 2 :combi->t_un = 2 ;break;
                         case 3 : 
-                        		if(score.t_un == 0)
-                                combi->t_un = 3;        	//Si Trois dés face 1, joueur peut marquer 3*1 points pour total de un
-                                combi->brelan = 3;          //ou alors les points du brelan de 1
+                        		if(score.t_un == 0){			//Si Trois dés face 1, joueur peut marquer 3*1 points pour total de un
+                                	combi->t_un = 3;			
+                                }
+
+                                if(score.brelan == 0){			//ou alors les points du brelan de 1.	        	
+                                	combi->brelan = 3;
+                                }					          
                                 break;
                         case 4 :
-                                combi->t_un = 4 ;
-                                combi->carre = 4;
+                        		if(score.t_un == 0){
+                                	combi->t_un = 4 ;
+                                }
+                                if(score.carre == 0){			// ou alors les points du carrée de 1.
+                                	combi->carre = 4;
+                            	}
                                 break;
                         case 5 :
-                                combi->t_un = 5;
-                                combi->yams = 1;
+                        		if(score.t_un == 0){
+                                	combi->t_un = 5;			
+                            							
+                                }
+                                if(score.yams == 0){   			// ou encore les points du yams
+                                	combi->yams = 1;.
+                                }	
                         break;
                 }
         }
@@ -254,96 +268,167 @@ void combinaison(combinaison * combi, t_main m1, fiche_score score)
                 switch(m1.nb_deux){
                         case 1 :combi->t_deux = 1 ;break;
                         case 2 :combi->t_deux = 2 ;break;
-                        case 3 :
-                                combi->t_deux = 3;
-                                combi->brelan = 6;		
+                        case 3 : 
+                        		if(score.t_deux == 0){			//Si Trois dés face 2, joueur peut marquer 3*2 points pour total de un
+                                	combi->t_deux = 3;			
+                                }
+
+                                if(score.brelan == 0){			//ou alors les points du brelan de 2.	        	
+                                	combi->brelan = 6;
+                                }					          
                                 break;
                         case 4 :
-                                combi->t_deux = 4;
-                                combi->carre = 8;
+                        		if(score.t_deux == 0){
+                                	combi->t_deux = 4;
+                                }
+                                if(score.carre == 0){			// ou alors les points du carrée de 2.
+                                	combi->carre = 8;
+                            	}
                                 break;
                         case 5 :
-                                combi->t_deux = 5;
-                                combi->yams = 1;
-                                break;
+                        		if(score.t_deux == 0){
+                                	combi->t_deux = 5;			
+                            							
+                                }
+                                if(score.yams == 0){   			// ou encore les points du yams
+                                	combi->yams = 1;.
+                                }	
+                        break;
                 }
         }
         if(m1.nb_trois > 0){
                 switch(m1.nb_trois){
                         case 1 :combi->t_trois = 1 ;break;
                         case 2 :combi->t_trois = 2 ;break;
-                        case 3 :
-                                combi->t_trois = 3;
-                                combi->brelan = 9;
+                        case 3 : 
+                        		if(score.t_trois == 0){			
+                                	combi->t_trois = 3;			
+                                }
+
+                                if(score.brelan == 0){			   	
+                                	combi->brelan = 9;
+                                }					          
                                 break;
                         case 4 :
-                                combi->t_trois = 4;
-                                comlbi->carre = 12;
+                        		if(score.t_trois == 0){
+                                	combi->t_trois = 4;
+                                }
+                                if(score.carre == 0){			
+                                	combi->carre = 12;
+                            	}
                                 break;
                         case 5 :
-                                combi->t_trois = 5;
-                                combi->yams = 1;
-                                break;
+                        		if(score.t_trois == 0){
+                                	combi->t_trois = 5;			
+                            							
+                                }
+                                if(score.yams == 0){   			
+                                	combi->yams = 1;.
+                                }	
+                        break;
                 }
         }
         if(m1.nb_quatre > 0){
                 switch(m1.nb_quatre){
                         case 1 :combi->t_quatre = 1 ;break;
                         case 2 :combi->t_quatre = 2 ;break;
-                        case 3 :
-                                combi->t_quatre = 3;
-                                combi->brelan = 12;
+                        case 3 : 
+                        		if(score.t_quatre == 0){			
+                                	combi->t_quatre = 3;			
+                                }
+
+                                if(score.brelan == 0){			       	
+                                	combi->brelan = 12;
+                                }					          
                                 break;
                         case 4 :
-                                combi->t_quatre = 4;
-                                combi->carre = 16;
+                        		if(score.t_quatre == 0){
+                                	combi->t_quatre = 4 ;
+                                }
+                                if(score.carre == 0){			
+                                	combi->carre = 16;
+                            	}
                                 break;
                         case 5 :
-                                combi->t_quatre = 5;
-                                combi->yams = 1;
-                                break;
+                        		if(score.t_quatre == 0){
+                                	combi->t_quatre = 5;			
+                            							
+                                }
+                                if(score.yams == 0){   			
+                                	combi->yams = 1;.
+                                }	
+                        break;
                 }
         }
         if(m1.nb_cinq > 0){
                 switch(m1.nb_cinq){
-                        case 1 :combi->t_cinq = 1 ;break;
+                       case 1 :combi->t_cinq = 1 ;break;
                         case 2 :combi->t_cinq = 2 ;break;
-                        case 3 :
-                                combi->t_cinq = 3;
-                                combi->brelan = 15;
+                        case 3 : 
+                        		if(score.t_cinq == 0){			
+                                	combi->t_cinq = 3;			
+                                }
+
+                                if(score.brelan == 0){				        	
+                                	combi->brelan = 15;
+                                }					          
                                 break;
                         case 4 :
-                                combi->t_cinq = 4;
-                                combi->carre = 20;
+                        		if(score.t_cinq == 0){
+                                	combi->t_cinq = 4 ;
+                                }
+                                if(score.carre == 0){			
+                                	combi->carre = 20;
+                            	}
                                 break;
                         case 5 :
-                                combi->t_cinq = 5;
-                                combi->yams = 1;
-                                break;
+                        		if(score.t_cinq == 0){
+                                	combi->t_cinq = 5;			
+                            							
+                                }
+                                if(score.yams == 0){   			
+                                	combi->yams = 1;.
+                                }	
+                        break;
                 }
         }
         if(m1.nb_six > 0){
                 switch(m1.nb_six){
-                        case 1 :combi->t_six = 1 ;break;
-                        case 2 :combi->t_six = 2 ;break;
-                        case 3 :
-                                combi->t_six = 3;
-                                combi->brelan = 18;
+                        case 1 :combi->t_un = 1 ;break;
+                        case 2 :combi->t_un = 2 ;break;
+                        case 3 : 
+                        		if(score.t_un == 0){			
+                                	combi->t_un = 3;			
+                                }
+
+                                if(score.brelan == 0){				        	
+                                	combi->brelan = 18;
+                                }					          
                                 break;
                         case 4 :
-                                combi->t_six = 4;
-                                combi->carre = 24;
+                        		if(score.t_un == 0){
+                                	combi->t_un = 4 ;
+                                }
+                                if(score.carree == 0){
+                                	combi->carre = 24;
+                            	}
                                 break;
                         case 5 :
-                                combi->t_six = 5;
-                                combi->yams = 1;
-                                break;
+                        		if(score.t_un == 0){
+                                	combi->t_un = 5;			
+                            							
+                                }
+				
+                                if(score.yams == 0){   			
+                                	combi->yams = 1;.
+                                }	
+                        break;
                 }
 	    }
 
 	    if(score.petite_s == 0){
 
-	    	pte_suite(combinaison * combi, t_main m1); //verifie si la combinaison est une petitte suite.
+	    	petite_suite(combinaison * combi, t_main m1); //verifie si la combinaison est une petitte suite.
 
 	    }
 	    
