@@ -12,6 +12,7 @@ int menu_SDL(void){
     SDL_wINDOW *pwindow = NULL;
     SDL_Renderer *renderer = NULL;
     SDL_Rect txtDestRect, txtMenuRect[3], imgBtnRect, imgBGRect;
+   
     
     /*couleur noir*/
     SDL_Color noir = {0,0,0,0};
@@ -122,6 +123,7 @@ int menu_SDL(void){
                         imgBtnRect.x = 440;
                         imgBtnRect.y = 150;
                         SDL_QueryTexture(bouton_dessus, NULL, NULL, &(imgBtnRect.w), &(imgBtnRect.h));
+                        
                         for(j=0;j<3;j++){
 
                             if(x<620 && x>440 && y<imgBtnRect.y+77 && imgBtnRect.y<y){
@@ -134,30 +136,31 @@ int menu_SDL(void){
                                 }
                             }
                             else{
-                                
+                                temp = bouton;
                             }
+                            
+                            SDL_RenderCopy(renderer, temp, NULL, &imgBtnRect);
+                            SDL_RenderCopy(renderer, menu[i], NULL, &(txtMenuRect[i]));
+                            imgBtnRect.y += 90;
                         }
-
-
-
-
-
-                        /* Ajout de la seconde image à une certaine position */
+                        
+                        /*imgBtnRect.x = 1000;
+                        imgBtnrect.y = 570;*/
+                        
+                        /* Ajout de la seconde image à une certaine position 
                         imgDestRect.x = 10;
                         imgDestRect.y = 50;
                         SDL_QueryTexture(image_tex, NULL, NULL, &(imgDestRect.w), &(imgDestRect.h));
                         SDL_RenderCopy(renderer, image_tex, NULL, &imgDestRect);
                                 
-                        /* Ajout de la seconde image à une autre position */
+                        /* Ajout de la seconde image à une autre position 
                         imgDestRect.x = 250;
-                         SDL_RenderCopy(renderer, image_tex, NULL, &imgDestRect);
+                         SDL_RenderCopy(renderer, image_tex, NULL, &imgDestRect);*/
                                 
                         /* On fait le rendu ! */
                         SDL_RenderPresent(renderer);
-                                
-                            break;
-                        }
-                    break;
+                        break;
+
                 } 
             } 
         }
@@ -166,9 +169,10 @@ int menu_SDL(void){
     }
 
     //Destruction de la fenetre
-    SDL_DestroyWindow(pWindow);
-
-    TTF_CloseFont(police); /* Doit être avant TTF_Quit() */
+    if(pWindow != NULL) SDL_DestroyWindow(pWindow);
+    
+    /*TTF_CloseFont(police); /* Doit être avant TTF_Quit() 
     TTF_Quit();
-    SDL_Quit();
+    SDL_Quit();*/
+    return 0;
 }
