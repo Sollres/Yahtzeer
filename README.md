@@ -3,8 +3,6 @@ Projet L2 Collins SOARES Fatih UFACIK
 
 Yahtzee
 
-1ere Seance :
-
 Règle du jeu :
 
 - Le Yahtzee se joue à 5 dés et se termine une fois toutes les cases de la fiche de score remplies.
@@ -44,35 +42,32 @@ Total 2|
 Objectif Projet :
 -Joueur contre joueur sur un poste/
 -Jeu contre une IA/
--Jeu en réseau joueur contre joueur/
 -Interface graphique
 
 Total final
 Fonctions :
 
-int Start () 
-
-Permet de choisir le nombre de joueur de la partie
-
 void Lancer (structure main)
 
-Permet le lancement des 5 dés
-
-void Relance(structure main)
+Permet le lancement des 5 dés et de relancer certains dés
 
 Switch et plusieurs fonctions lancer en fonctions du nombre de dés a jeter???? 
 
-int MainJ  (structure main)
+void nb_face(t_main *m)
 
 Permet de compter le nombre de face que le joueur possède (ex : 3 Deux, 2 un, etc...)
 
-int Combinaison(structure combinaison)
+int Combinaison(structure combinaison) ainsi qu'une fonction pour chaque combinaison
 
 Repertorie les combinaison possible avec les dés de la main.
 
 int Tour (numero du joueur, structure main)
 
 Permet de réaliser le tour d’un des joueurs. Combinaison jouée et nombre de points marqués
+
+void gagnant(t_fiche_score score,t_fiche_score score2)
+
+permettant de savoir quels joueur a gagner en fin de partie
 
 int Points ()
 
