@@ -43,7 +43,7 @@ int menu_SDL(void){
     SDL_Texture *menu[3];
     menu[0] = tex_text("./Police_ttf/police.ttf", 50, "JOUEUR VS IA", noir, renderer);
     menu[1] = tex_text("./Police_ttf/police.ttf", 50, "JOUEUR VS JOUEUR", noir, renderer);
-    menu[2] = tex_text("./Police_ttf/police.ttf", 50, "QuitZeR", noir, renderer);
+    menu[2] = tex_text("./Police_ttf/police.ttf", 50, "QUITTER", noir, renderer);
 
     
     /*position du titre*/
@@ -89,18 +89,13 @@ int menu_SDL(void){
             SDL_Event e;
             SDL_GetMouseState(&x,&y);
             
-            /*if(x<700 && x>385 && y<526 && y>130){
-                    goto aff_Menu;
-
-            } */
-            
             while(SDL_PollEvent(&e)) { 
                 switch(e.type) { 
                     case SDL_QUIT: running = 0; 
                     break;
                     case SDL_MOUSEBUTTONDOWN:
-                        //if(x>1000 && x<1000+82 && y>570 && y<570+80) 
-                    // on a cliqué en (x,y)
+                        
+            // on a cliqué en (x,y)
             for(i = 0; i<3; i++){
                 if(x>txtMenuRect[i].x&&x<txtMenuRect[i].x+txtMenuRect[i].w && y>txtMenuRect[i].y&&y<txtMenuRect[i].y+txtMenuRect[i].h){
                     fprintf(stderr, "on a cliqué sur le bouton %d\n", i+1);
@@ -109,10 +104,6 @@ int menu_SDL(void){
             }   
                         break;
                     case SDL_WINDOWEVENT:
-
-                        /* Le fond de la fenêtre sera blanc 
-                        SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-                        SDL_RenderClear(renderer);*/
 
                         /*le fond*/
                         
@@ -153,19 +144,7 @@ int menu_SDL(void){
                             SDL_RenderCopy(renderer, menu[i], NULL, &(txtMenuRect[i]));
                             imgBtnRect.y += 90;
                         }
-                        
-                        /*imgBtnRect.x = 1000;
-                        imgBtnrect.y = 570;*/
-                        
-                        /* Ajout de la seconde image à une certaine position 
-                        imgDestRect.x = 10;
-                        imgDestRect.y = 50;
-                        SDL_QueryTexture(image_tex, NULL, NULL, &(imgDestRect.w), &(imgDestRect.h));
-                        SDL_RenderCopy(renderer, image_tex, NULL, &imgDestRect);
-                                
-                         Ajout de la seconde image à une autre position 
-                        imgDestRect.x = 250;
-                         SDL_RenderCopy(renderer, image_tex, NULL, &imgDestRect);*/
+                     
                                 
                         /* On fait le rendu ! */
                         SDL_RenderPresent(renderer);
@@ -181,7 +160,6 @@ int menu_SDL(void){
     //Destruction de la fenetre
     if(pWindow != NULL) SDL_DestroyWindow(pWindow);
     
-    /*TTF_CloseFont(police);  Doit être avant TTF_Quit() */
     TTF_Quit();
     SDL_Quit();
     return 0;
