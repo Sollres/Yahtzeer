@@ -2,6 +2,7 @@
 Projet L2 Collins SOARES Fatih UFACIK
 
 /*** Si besoin compiler le fichier yahtzee2.c sans le make file ***/
+
 /*** Comme notre interface graphique n'est pas finie il n'y a pas de make file pour compiler cependant dans chaque fichier SDL il y a un main pour compiler. ***/ 
 
 Yahtzee
