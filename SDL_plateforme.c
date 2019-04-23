@@ -60,7 +60,7 @@ SDL_Texture *tex_img_png(char * s, SDL_Renderer * renderer){
     return bouton;
 }
 
-int SDL_plateforme(void){
+int main(void){
 
       int x,y;
       int i, j;
