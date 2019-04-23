@@ -59,7 +59,7 @@ SDL_Texture *tex_text(char * font, int size, char *s, SDL_Color color, SDL_Rende
 } 
 
 
-int SDL_menu(void){
+int main(void){
 
       int x,y;
       int i, j;
