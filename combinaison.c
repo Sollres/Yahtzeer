@@ -4,6 +4,7 @@
 #include "lancement.h"
 #include "affichage.h"
 #include "combinaison.h"
+int choixx;
 
 void nb_face(t_main *m){
     int tab[7] = {0,0,0,0,0,0,0};
