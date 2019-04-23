@@ -5,6 +5,7 @@
 #include "affichage.h"
 #include "combinaison.h"
 #include "tour.h"
+int choixx;
 
 void gagnant(t_fiche_score score,t_fiche_score score2){
     if(score.total > score2.total){
