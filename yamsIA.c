@@ -201,7 +201,7 @@ void affiche_score(int *score, int total_i, int total_ii, int total, int bonus){
 	printf("|-----------------------------------|\n");
 }
 
-void Tour(int *des,int *nb,int *combi, int *score){
+void TourO(int *des,int *nb,int *combi, int *score){
     int total_i = 0;
     int bonus = 0;
     int total_ii = 0;
@@ -230,7 +230,7 @@ int main(void){
     int combi[13] = {0,0,0,0,0,0,0,0,0,0,0,0,0};
     int score[13] = {0,0,0,0,0,0,0,0,0,0,0,0,0};
     while(t<14){
-        Tour(des,nb,combi,score);
+        TourO(des,nb,combi,score);
         t++;
     }
     
