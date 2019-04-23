@@ -1,6 +1,8 @@
 # Yahtzeer
 Projet L2 Collins SOARES Fatih UFACIK
 
+/*** Si besoin compiler le fichier yahtzee2.c sans le make file ***/
+
 Yahtzee
 
 Règle du jeu :
